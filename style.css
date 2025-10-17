@@ -1,0 +1,119 @@
+:root{
+  --bg:#18a0e9;
+  --panel:#2aa52a;
+  --accent:#e53935;
+  --text-yellow:#f6e75f;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,body{height:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:28px;
+}
+
+.card{
+  width:760px;
+  background:var(--bg);
+  box-sizing:border-box;
+  padding:12px;
+  border-radius:6px;
+}
+
+.title{
+  font-size:44px;
+  font-weight:800;
+  color:var(--text-yellow);
+  margin:0 0 8px 0;
+  padding:6px 10px;
+  background:transparent;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.06);
+}
+
+.panel{
+  background:var(--panel);
+  padding:18px;
+  border-radius:10px;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.08) inset;
+  position:relative;
+  border:6px dashed transparent;
+}
+
+.panel::before{
+  content:'';
+  position:absolute;
+  left:-12px; right:-12px; top:-12px; bottom:-12px;
+  border-radius:12px;
+  border:6px dashed var(--accent);
+  pointer-events:none;
+  box-sizing:border-box;
+}
+
+.intro{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  color:var(--text-yellow);
+  font-weight:700;
+  line-height:1.4;
+  font-size:15px;
+}
+
+.thumb{
+  width:120px;
+  height:100px;
+  flex:0 0 120px;
+  background-image:url('rainbow.jpg');
+  background-size:cover;
+  background-position:center;
+  border-radius:6px;
+  box-shadow:0 2px 0 rgba(0,0,0,0.15);
+  border:4px solid rgba(255,255,255,0.06);
+}
+
+.text-block{flex:1;padding-right:6px;}
+
+.divider{
+  height:18px;
+  margin:18px 0;
+  background:linear-gradient(90deg, transparent 0 6px, var(--accent) 6px 10px, transparent 10px 100%);
+  background-size:18px 100%;
+  border-radius:4px;
+}
+
+.second{
+  color:var(--text-yellow);
+  font-weight:700;
+  line-height:1.45;
+  font-size:15px;
+  padding:10px 6px;
+  border-radius:6px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.06) inset;
+}
+
+.second-wrap{
+  margin-top:8px;
+  padding:10px;
+  border-radius:8px;
+  position:relative;
+  background:transparent;
+}
+.second-wrap::before{
+  content:'';
+  position:absolute;
+  left:-12px; right:-12px; top:-12px; bottom:-12px;
+  border-radius:12px;
+  border:6px dashed var(--accent);
+  pointer-events:none;
+  box-sizing:border-box;
+}
+
+@media (max-width:800px){
+  .card{width:100%;}
+  .intro{flex-direction:column;}
+  .thumb{width:100%;height:180px;flex:unset;}
+}
